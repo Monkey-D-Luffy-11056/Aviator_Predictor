@@ -1,0 +1,410 @@
+/* --- Variables de Couleur (Personnalisez !) --- */
+:root {
+    --primary-color: #4a90e2; /* Bleu vif */
+    --secondary-color: #50e3c2; /* Turquoise/Vert menthe */
+    --accent-color: #f5a623; /* Orange */
+    --dark-color: #333;
+    --light-color: #f8f9fa;
+    --text-color: #444;
+    --gradient-start: #4facfe;
+    --gradient-end: #00f2fe;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Réinitialisation et Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+header {
+    background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    color: white;
+    padding: 3rem 0 2rem; /* Plus d'espace */
+    text-align: center;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    display: flex; /* Pour aligner l'icône et le titre */
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espace entre icône et titre */
+}
+
+.app-icon {
+    width: 50px; /* Ajustez la taille de l'icône */
+    height: 50px;
+    vertical-align: middle; /* Meilleur alignement vertical */
+}
+
+
+header .tagline {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* --- Main Content --- */
+main {
+    flex-grow: 1; /* Fait en sorte que le main prenne l'espace disponible */
+    padding: 3rem 0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative; /* Pour le pseudo-élément décoratif */
+    padding-bottom: 0.5rem;
+}
+
+/* Ligne décorative sous les titres h2 */
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 2px;
+}
+
+
+#description p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    text-align: justify; /* Texte justifié pour une meilleure lecture */
+}
+
+/* --- Section Téléchargements --- */
+#downloads {
+    background-color: #fff; /* Fond blanc pour cette section */
+    padding: 3rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+#downloads .container > p { /* Le paragraphe juste après h2 */
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+.download-options {
+    display: grid; /* Utilisation de Grid pour plus de flexibilité */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes responsives */
+    gap: 2rem; /* Espace entre les cartes */
+    justify-content: center;
+}
+
+.download-card {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.download-card:hover {
+    transform: translateY(-5px); /* Effet de soulèvement */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.download-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.download-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    min-height: 40px; /* Pour aligner les boutons même si descriptions de tailles différentes */
+}
+
+.download-card span {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 50px; /* Boutons arrondis */
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Léger soulèvement au survol */
+    opacity: 0.9;
+}
+
+.download-btn {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.4);
+}
+.download-btn:hover { background-color: #3a7bc8; }
+
+.download-btn-beta {
+    background-color: var(--accent-color);
+     box-shadow: 0 4px 10px rgba(245, 166, 35, 0.4);
+}
+.download-btn-beta:hover { background-color: #e0951c; }
+
+.download-btn-lite {
+    background-color: var(--secondary-color);
+     box-shadow: 0 4px 10px rgba(80, 227, 194, 0.4);
+}
+.download-btn-lite:hover { background-color: #40c0a8; }
+
+.apk-warning {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-color);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto; /* Colle le footer en bas si le contenu est court */
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    header .tagline {
+        font-size: 1rem;
+    }
+    .app-icon {
+        width: 40px;
+        height: 40px;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    .download-options {
+         /* Sur tablette, 1 ou 2 colonnes max */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .download-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+        gap: 10px;
+    }
+    header .tagline {
+        font-size: 0.9rem;
+    }
+     .app-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    main {
+        padding: 2rem 0;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+     #description p {
+        font-size: 1rem;
+    }
+    /* Les cartes de téléchargement prendront toute la largeur */
+     .download-options {
+        grid-template-columns: 1fr; /* Une seule colonne */
+         gap: 1.5rem;
+    }
+    .download-card {
+        padding: 1.5rem 1rem; /* Moins de padding horizontal */
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* --- Ajout d'une image d'icône Placeholder (si vous n'avez pas la vôtre) --- */
+/* Si vous avez votre icône, remplacez placeholder-icon.png dans le HTML */
+/* Sinon, ceci crée un cercle coloré simple */
+.app-icon[src="placeholder-icon.png"] {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  border-radius: 50%;
+  width: 50px; /* Doit correspondre à la taille CSS */
+  height: 50px; /* Doit correspondre à la taille CSS */
+  content: ''; /* Cache le texte alt si l'image est cassée */
+  color: transparent; /* Cache le texte alt si l'image est cassée */
+}
+@media (max-width: 768px) {
+    .app-icon[src="placeholder-icon.png"] { width: 40px; height: 40px; }
+}
+@media (max-width: 480px) {
+    .app-icon[src="placeholder-icon.png"] { width: 35px; height: 35px; }
+}
+
+/* --- Section Version Web --- */
+#web-version {
+    text-align: center; /* Centre le contenu de la section */
+    padding: 2rem 0;   /* Ajoute de l'espace vertical */
+    margin-top: 1rem; /* Espace après la section téléchargements */
+    border-top: 1px dashed #ddd; /* Séparateur visuel léger */
+}
+
+#web-version h2 {
+    /* Style du titre hérité, mais on peut ajuster si besoin */
+    margin-bottom: 1rem; /* Moins d'espace que les autres titres */
+}
+
+#web-version p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.web-version-link {
+    margin-top: 1rem;
+}
+
+/* --- Style spécifique et Animation pour le bouton Version Web --- */
+.btn-web-version {
+    background-color: var(--accent-color); /* Couleur d'accentuation */
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4); /* Ombre assortie */
+    /* Animation */
+    animation: pulse-web-btn 2s infinite ease-in-out;
+}
+
+.btn-web-version:hover {
+    background-color: #e0951c; /* Assombrir légèrement au survol */
+    animation-play-state: paused; /* Met l'animation en pause au survol */
+}
+
+/* --- Définition de l'animation Keyframes --- */
+@keyframes pulse-web-btn {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+    }
+    50% {
+        transform: scale(1.05); /* Légèrement plus grand */
+        box-shadow: 0 6px 20px rgba(245, 166, 35, 0.6); /* Ombre plus prononcée */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+    }
+}
+
+/* --- Ajustements responsives si nécessaire pour la nouvelle section --- */
+@media (max-width: 480px) {
+    #web-version {
+        padding: 1.5rem 0;
+    }
+     #web-version p {
+        font-size: 1rem;
+    }
+}
+
+/* --- Footer Enhancements --- */
+
+/* Cibler le paragraphe ajouté pour un espacement spécifique si nécessaire */
+footer p + p { /* Ajoute un espace au-dessus de tout paragraphe qui suit un autre paragraphe dans le footer */
+    margin-top: 0.5rem; /* Ajustez cette valeur si besoin */
+}
+
+/* S'assurer que le style du lien est bien celui défini précédemment */
+/* Ces règles existent déjà, c'est juste pour rappel */
+/*
+footer a {
+    color: var(--secondary-color);
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline; /* Optionnel: souligner au survol */
+/* } */
+
+/* Style spécifique pour l'ID si vous voulez le distinguer encore plus (optionnel) */
+#emailLink {
+   /* Vous pourriez ajouter un style unique ici, mais hériter est souvent mieux pour la cohérence */
+   /* Par exemple: font-weight: 600; */
+}
