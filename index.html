@@ -15,6 +15,21 @@
         <div class="container">
             <h1><img src="placeholder-icon.png" alt="App Icon" class="app-icon"> Aviator Predictor</h1>
             <p class="tagline">MONKEY PREDICTOR</p>
+
+            <!-- MENU DE NAVIGATION -->
+            <nav class="navbar">
+                <button class="nav-toggle" id="nav-toggle-btn" aria-label="Ouvrir le menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu-list">
+                    <li class="nav-item"><a href="#description" class="nav-link">À Propos</a></li>
+                    <li class="nav-item"><a href="#screenshots" class="nav-link">Aperçu</a></li>
+                    <li class="nav-item"><a href="#update-info" class="nav-link">Mise à Jour</a></li>
+                    <li class="nav-item"><a href="#downloads" class="nav-link">Télécharger</a></li>
+                    <li class="nav-item"><a href="#web-version" class="nav-link">Version Web</a></li>
+                </ul>
+            </nav>
+            <!-- FIN DU MENU -->
         </div>
     </header>
 
@@ -37,12 +52,18 @@
         </section>
 
         <section id="update-info" class="container">
-            <h2>Dernière Mise à Jour : Version 1.4.0</h2>
-            <p>Découvrez les nouveautés introduites dans la version 1.4.0 pour une expérience améliorée :</p>
+            <h2>Dernière Mise à Jour : Version 1.5.0</h2>
+            <p>Découvrez les nouveautés introduites dans la version 1.5.0 pour une expérience améliorée :</p>
             <ul style="margin-top: 1rem; margin-bottom: 1.5rem; padding-left: 20px;">
                 <li style="margin-bottom: 0.5rem;">
-                    <strong>Nouvelle Stratégie (IA) :</strong> Implémentation d'une stratégie de calcul de tour avancée. Celle-ci est désormais boostée par une intelligence artificielle pour affiner les prédictions et les tours recommandés.
+                   <strong>Nouvelle Stratégie (Prédiction pré-alpha) : </strong>Nous avons implémenté une stratégie de calcul avancée, désormais boostée par une intelligence artificielle pour affiner les prédictions (pré-alpha) pour tous les jeux CRASH. Un chat IA est également disponible.</li> 
+                    <strong></strong> </li>
+                <li style="margin-bottom: 0.5rem;">
+                    <strong>Nouvelle Stratégie (Calcul tour IA) :</strong>Implémentation d'une stratégie de calcul de tour avancée. Celle-ci est désormais boostée par une intelligence artificielle pour affiner les prédictions et les tours recommandés.
                 </li>
+                
+                <li style="margin-bottom: 0.5rem;">
+                    <strong>Amélioration des autres stratégies :</strong> Nous avons aussi continué à perfectionner nos autres stratégies, notamment en ce qui concerne la stratégie rose (+5%)</li>
                 <li style="margin-bottom: 0.5rem;">
                     <strong>Ajout d'un Menu Complet :</strong> Un nouveau menu centralise l'accès à toutes les options importantes, y compris des tutoriels (vidéos, PDF), les différentes stratégies, et d'autres ressources utiles.
                 </li>
@@ -56,22 +77,22 @@
 
         <section id="downloads">
             <div class="container">
-                <h2>Téléchargements (v1.4.0)</h2>
+                <h2>Téléchargements (v1.5.0)</h2>
                 <p>Choisissez votre méthode de téléchargement préférée :</p>
                 <div class="download-options">
                     <div class="download-card">
                         <h3>Dernière version</h3>
                         <p>Toutes les architectures
                         <br>Lien direct</p>
-                        <a href="https://github.com/Monkey-D-Luffy-11056/Aviator_Predictor/releases/download/1.4.0/AviatorPredictor.1.4.0.apk" class="btn download-btn" target="_blank" rel="noopener noreferrer">Télécharger v1.4.0</a>
-                        <span>Taille: 72 Mo | Mise à jour: 4 mai 2025</span> <!-- Date mise à jour -->
+                        <a href="https://github.com/Monkey-D-Luffy-11056/Aviator_Predictor/releases/download/1.5.0/AviatorPredictorV1.5.0.apk" class="btn download-btn" target="_blank" rel="noopener noreferrer">Télécharger v1.5.0</a>
+                        <span>Taille: 76 Mo | Mise à jour: 13 juin 2025</span>
                     </div>
                     <div class="download-card">
-                        <h3>Dernière version</h3>
+                        <h3>Ancienne version</h3>
                         <p>Toutes les architectures
                         <br>GOOGLE DRIVE</p>
                         <a href="https://drive.google.com/file/d/1CfKV2UwH3Aha0CGjZExqpaPs4s8uMPr3/view?usp=drivesdk" class="btn download-btn-beta" target="_blank" rel="noopener noreferrer">Télécharger v1.4.0</a>
-                         <span>Taille: 72 Mo | Mise à jour: 4 mai 2025</span> <!-- Date mise à jour -->
+                         <span>Taille: 72 Mo | Mise à jour: 4 mai 2025</span>
                     </div>
 
                 </div>
@@ -94,10 +115,31 @@
 
     <footer>
         <div class="container">
-             <p>© 2025 Monkey Predictor. Tous droits réservés.</p> <!-- Année mise à jour -->
-            <p>Des questions ? Contactez-nous à <a href="mailto:MonkeyD11056@gmail.com" id="emailLink">MonkeyD11056@gmail.com</a></p>
-            </div>
+             <p>© 2025 Monkey Predictor. Tous droits réservés.</p>
+             <!-- LIGNE MODIFIÉE CI-DESSOUS -->
+             <p>Des questions ? <a href="https://contact-monkey.netlify.app/" target="_blank" rel="noopener noreferrer">Contactez-nous via notre formulaire</a></p>
+        </div>
     </footer>
 
-    </body>
+    <!-- SCRIPT POUR LE MENU MOBILE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggleBtn = document.getElementById('nav-toggle-btn');
+            const navMenuList = document.getElementById('nav-menu-list');
+
+            if (navToggleBtn && navMenuList) {
+                navToggleBtn.addEventListener('click', () => {
+                    navMenuList.classList.toggle('is-active');
+                    navToggleBtn.classList.toggle('is-active');
+                });
+                navMenuList.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenuList.classList.remove('is-active');
+                        navToggleBtn.classList.remove('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
 </html>
